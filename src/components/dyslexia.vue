@@ -3,7 +3,7 @@ import { onMounted } from 'vue';
 let text = defineModel<string>();
 let intervalID: number;
 let delay = 1000;
-let punc = ",.<>`~!@#$%^&*()[]{}\\|'\";:-_=+/? \n\r";
+let punc = ",.<>`~!@#$%^&*()[]{}\\|'\";:-_=+/? \n\r，。《》【】（）￥！’‘“”、；：＠＃＄％＾＆…";
 let anim = true;
 
 function update() {
