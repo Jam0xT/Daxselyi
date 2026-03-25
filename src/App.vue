@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import Dyslexia from "./components/dyslexia.vue";
 </script>
 
 <template>
-  <HelloWorld />
+    <Dyslexia/>
 </template>
