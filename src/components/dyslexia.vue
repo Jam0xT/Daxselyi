@@ -4,6 +4,7 @@ let text = defineModel<string>();
 let intervalID: number;
 let delay = 1000;
 let punc = ",.<>`~!@#$%^&*()[]{}\\|'\";:-_=+/? \n\r";
+let anim = true;
 
 function update() {
     if (text.value) {
@@ -51,7 +52,22 @@ function randomShuffleWord(str: string) {
 
 onMounted(function() {
     intervalID = setInterval(update, delay);
-    update()
+    anim = true;
+
+    window.addEventListener('keydown', toggleAnim);
+
+    function toggleAnim(e) {
+        if (e.code !== 'Escape') {
+            return
+        }
+        if (anim) {
+            stopAnim();
+            anim = false;
+        } else {
+            intervalID = setInterval(update, delay);
+            anim = true;
+        }
+    }
 })
 
 function stopAnim() {
