@@ -41,8 +41,9 @@ function randomShuffleWord(str: string) {
     }
     let arr = str.split('');
     let n = arr.length;
-    for (let i = n - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
+    // switch the commented parts for readable mode! in which the first and last character will not be shuffled
+    for (let i = n - 1; i > 0; i--) { // for (let i = n - 2; i > 0; i--)
+        let j = Math.floor(Math.random() * (i + 1)); // Math.random() * i + 1
         let tmp = arr[j];
         arr[j] = arr[i];
         arr[i] = tmp;
